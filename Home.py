@@ -18,7 +18,7 @@ c.execute("INSERT INTO broodweetjes (weetje) VALUES ('Brood kan worden gemaakt v
 c.execute("INSERT INTO broodweetjes (weetje) VALUES ('Brood is een belangrijke bron van koolhydraten, die energie leveren aan het lichaam.')")
 c.execute("INSERT INTO broodweetjes (weetje) VALUES ('Brood kan worden verrijkt met zaden, noten, gedroogd fruit en kruiden voor extra smaak en voedingswaarde.')")
 conn.commit()
-conn.close()
+conn.close()    
 
 
 
