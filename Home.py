@@ -31,17 +31,19 @@ st.subheader("De website voor brood!", text_alignment="center")
 # Body
 st.divider()
 st.subheader("Featured brood", text_alignment="center")
-col1, col2= st.columns(2)
-with col1:
-    st.image("https://www.koopmans.com/_default_upload_bucket/Brood%20nieuw.png", caption="koopmans", width=150)
-with col2:
-    st.image("https://www.bakkerijvangronsveld.be/wp-content/uploads/2023/08/Klein_Brood_Wit_400gr_img.png", caption="bakkerijvangronsveld", width=150)
 
-col1, col2 = st.columns(2)
-with col1:
-    st.image("https://biaform-provital.com/wp-content/uploads/2024/12/1-biaform-header-3-brood.png", caption="biaform provital", width=150)
-with col2:
-    st.image("https://www.bakkerijlanckriet.be/sites/default/files/styles/product_categories_portrait/public/2020-02/Groot%20platine%20grof.png?itok=kXKszGlP", caption="bakkerijlanckriet", width=150)
+with st.container(border=True):
+    col1, col2= st.columns(2)
+    with col1:
+        st.image("https://www.koopmans.com/_default_upload_bucket/Brood%20nieuw.png", caption="koopmans", width=150)
+    with col2:
+        st.image("https://www.bakkerijvangronsveld.be/wp-content/uploads/2023/08/Klein_Brood_Wit_400gr_img.png", caption="bakkerijvangronsveld", width=150)
+
+    col1, col2 = st.columns(2)
+    with col1:
+        st.image("https://biaform-provital.com/wp-content/uploads/2024/12/1-biaform-header-3-brood.png", caption="biaform provital", width=150)
+    with col2:
+        st.image("https://www.bakkerijlanckriet.be/sites/default/files/styles/product_categories_portrait/public/2020-02/Groot%20platine%20grof.png?itok=kXKszGlP", caption="bakkerijlanckriet", width=150)
 
 st.divider()
 
@@ -52,5 +54,6 @@ if st.button("Broodweetje"):
     c = conn.cursor()
     c.execute("SELECT weetje FROM broodweetjes ORDER BY RANDOM() LIMIT 1")
     weetje = c.fetchone()[0]
-    st.write(weetje)
+    with st.container(border=True):
+        st.write(weetje)
     conn.close()
